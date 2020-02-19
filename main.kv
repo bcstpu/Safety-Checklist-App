@@ -1,0 +1,23 @@
+<MainMenu>
+	BoxLayout:
+		orientation: 'vertical'
+		padding: 10
+
+		Label:
+			id: disclaimer_label
+			text: 'This app is not affiliated with VDOT in any way shape or form.\nIt is provided with no guarantees, express or implied.'
+			size_hint_y: 0.7
+		Label:
+			id: made_by_label
+			text: "Made by CMSC495 Group 3."
+
+		Button:
+			text: 'Create a new form'
+			size_hint_y: 0.4
+			on_release:
+				root.manager.current = 'FormEntry'
+		Button:
+			text: 'Open an existing form'
+			size_hint_y: 0.4
+			on_release:
+				root.manager.current = 'FileBrowser'
