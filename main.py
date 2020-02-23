@@ -19,8 +19,7 @@ class Main(App):
 		screen_manager.add_widget(FileBrowser(name="FileBrowser"))
 		screen_manager.add_widget(FormEntry(name="FormEntry"))
 		return screen_manager
-	# TODO: a simple popup function, for user error prompt
-
+		
 
 if __name__ == "__main__":
 	Main().run()
