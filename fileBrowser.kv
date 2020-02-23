@@ -1,9 +1,21 @@
 <FileBrowser>:
     BoxLayout:
         orientation: 'vertical'
-        padding: 20
-        Label:
-            text: "File browser not done yet."
-        Button:
-            text: 'Press to go back, file browser is not currently implemented.\nThis is loading from fileBrowser.kv'
-            on_release: root.manager.current = 'MainMenu'
+
+        FileChooserListView:
+            id: _FileChooser
+
+        BoxLayout:
+            size_hint_y: None
+            padding: 10
+
+            Button:
+                id: back_button
+                text: "Back"
+                on_release: root.manager.current = 'MainMenu'
+            Button:
+                id: operation_button
+                text: root._operation_button_label_text
+                on_release:
+                    (root._set_file_path(str(_FileChooser.selection and _FileChooser.selection[0] or ""))) if not (root._save_mode) else (root._set_file_path(_FileChooser.path))
+                    root._operation()
