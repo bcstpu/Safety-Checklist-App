@@ -1,5 +1,1347 @@
 <FormEntry>:
-    BoxLayout:
-        Button:
-            text: 'Press to go back, form entry has not been completed yet.\nThis is loading from formEntry.kv'
-            on_release: root.manager.current = 'MainMenu'
+    do_scroll_x: False
+    do_scroll_y: True
+
+
+    #######
+    # IDS #
+    #######
+
+
+	# -- First Sectiion - ID's -- #
+	lic_num: lic_num
+	last_name: last_name
+	first_name: first_name
+	residency: residency
+	contractor_or_areaHeadQuarters: contractor_or_areaHeadQuarters
+	city_or_county: city_or_county
+	projNum_permanentitNum_location: projNum_permanentitNum_location
+	type_of_operation: type_of_operation
+	day_and_date: day_and_date
+	time: time
+	person_in_charge: person_in_charge
+	posted_speed: posted_speed
+	mph: mph
+	weather_condition: weather_condition
+	day: day
+	night_work: night_work
+	in_progress: in_progress
+	not_in_progress: not_in_progress
+	# --- -- --- #
+
+	# - Section A - ID's -- #
+	maneuvers_difficultOrUnexpected: maneuvers_difficultOrUnexpected
+	adequate_warningOfHazards: adequate_warningOfHazards
+	signing_isClearAndSpaced: signing_isClearAndSpaced
+	trafficControlDevices_wellVisible: trafficControlDevices_wellVisible
+	a_comments: a_comments
+	# --- -- --- #
+
+	# - Section B - ID's -- #
+	b_adequate: b_adequate
+	b_inadequate: b_inadequate
+	needToBe_removed: needToBe_removed
+	needToBe_repositioned: needToBe_repositioned
+	needToBe_covered: needToBe_covered
+	need_cleaning: need_cleaning
+	need_replacement: need_replacement
+	conflicting_permanentSigning: conflicting_permanentSigning
+	conflicting_temporarySigning: conflicting_temporarySigning
+	nonapproved_signSupport: nonapproved_signSupport
+	blocked_by_vegetation: blocked_by_vegetation
+	b_comments: b_comments
+	# --- -- --- #
+
+	# - Section C - ID's -- #
+	c_adequate: c_adequate
+	c_inadequate: c_inadequate
+	appDoesntMeet_guidelines: appDoesntMeet_guidelines
+	inappropriate_message: inappropriate_message
+	tooMuchInfo_on_PCMS: tooMuchInfo_on_PCMS
+	notDelineated_noCones: notDelineated_noCones
+	notDelineated_noBarrels: notDelineated_noBarrels
+	c_comments: c_comments
+	# --- -- --- #
+
+	# - Section D - ID's -- #
+	d_adequate: d_adequate
+	d_inadequate: d_inadequate
+	malfunc_malfunction: malfunc_malfunction
+	malfunc_bulb: malfunc_bulb
+	incorrect_placement: incorrect_placement
+	misaligned_bulbs: misaligned_bulbs
+	notDimmed_atNight: notDimmed_atNight
+	d_comments: d_comments
+	# --- -- --- #
+
+	# - Section E - ID's -- #
+	drums_used: drums_used
+	cones_used: cones_used
+	other_used: other_used
+	e_adequate: e_adequate
+	e_inadequate: e_inadequate
+	inapprop_taper_length: inapprop_taper_length
+	spacing_tooLong: spacing_tooLong
+	spacing_tooShort: spacing_tooShort
+	conditionOfDevices_repair: conditionOfDevices_repair
+	conditionOfDevices_clean: conditionOfDevices_clean
+	conditionOfDevices_replace: conditionOfDevices_replace
+	missingReflectSleevesOrBands_cones: missingReflectSleevesOrBands_cones
+	missingReflectSleevesOrBands_tubularMarkers: missingReflectSleevesOrBands_tubularMarkers
+	additonalDevicesNeeded: additonalDevicesNeeded
+	misaligned: misaligned
+	e_comments: e_comments
+	# --- -- --- #
+
+	# - Section F - ID's -- #
+	f_adequate: f_adequate
+	f_inadequate: f_inadequate
+	improperBarrier_wallFlare: improperBarrier_wallFlare
+	barrierNeedsToBe_realigned: barrierNeedsToBe_realigned
+	barrierNeedsToBe_removed: barrierNeedsToBe_removed
+	warningLight_service: warningLight_service
+	warningLight_clean: warningLight_clean
+	delineators_clean: delineators_clean
+	delineators_additional: delineators_additional
+	barrierPanels_clean: barrierPanels_clean
+	barrierPanels_additional: barrierPanels_additional
+	attenuator_repair: attenuator_repair
+	attenuator_replace: attenuator_replace
+	f_comments: f_comments
+	# --- -- --- #
+
+	# - Section G - ID's -- #
+	g_adequate: g_adequate
+	g_inadequate: g_inadequate
+	certified: certified
+	positionedCorrectly: positionedCorrectly
+	highlyVisible: highlyVisible
+	properlyClothed: properlyClothed
+	flaggingCorrectly: flaggingCorrectly
+	g_comments: g_comments
+	# --- -- --- #
+
+	# - Section H - ID's -- #
+	h_permanent: h_permanent
+	h_construction: h_construction
+	h_adequate: h_adequate
+	h_inadequate: h_inadequate
+	h_remove: h_remove
+	repair: repair
+	h_needAdditional: h_needAdditional
+	unnecessary_markings: unnecessary_markings
+	unnecessary_notEradicatedCompletely: unnecessary_notEradicatedCompletely
+	h_comments: h_comments
+	# --- -- --- #
+
+	# - Section I - ID's -- #
+	i_permanent: i_permanent
+	i_construction: i_construction
+	i_adequate: i_adequate
+	i_inadequate: i_inadequate
+	replace_missing: replace_missing
+	i_remove: i_remove
+	i_needAdditional: i_needAdditional
+	i_comments: i_comments
+	# --- -- --- #
+
+	# - Section J - ID's -- #
+	properly_positioned: properly_positioned
+	properly_maintained: properly_maintained
+	properly_delineated: properly_delineated
+	j_comments: j_comments
+	# --- -- --- #
+
+	# - Section K - ID's -- #
+	adequate_bufferSpace: adequate_bufferSpace
+	workArea_protected: workArea_protected
+	materials_properlyStored: materials_properlyStored
+	laneClosures_accordWithAllowedHours: laneClosures_accordWithAllowedHours
+	# --- -- --- #
+
+	# - Section Accidents - ID's -- #
+	evidence_ofAccident: evidence_ofAccident
+	damaged_trafficControlDevices: damaged_trafficControlDevices
+	skid_marks: skid_marks
+	debris: debris
+	# --- -- --- #
+
+	# -- Last Section - ID's -- #
+	comments_recommendations: comments_recommendations
+	reviewed_by: reviewed_by
+	reviewed_byDate: reviewed_byDate
+	reviewed_with: reviewed_with
+	reviewed_withDate: reviewed_withDate
+	giveCopy_to: giveCopy_to
+	# --- -- --- #
+
+
+	########
+	#MARKUP#
+	########
+
+
+    ScrollView:
+        GridLayout:
+            rows: 15
+            spacing: 2
+            padding: 2
+            size_hint_y:  None
+            height: self.minimum_height
+
+
+            GridLayout:
+                rows: 8
+                size_hint_y: None
+                height: 225
+
+                Button:
+                    font_size: 12
+                    text: "Form #TE-97001   &   Form #TE - 97002                            WORK ZONE SAFETY CHECKLIST                            (Press to Return)"
+                    # text: "Form #TE-97001   &   Form #TE - 97002                        WORK ZONE SAFETY CHECKLIST                                  Press to return"
+                    size_hint: .5, .15
+                    on_release:
+                        root.manager.current = 'MainMenu'
+
+                Label:
+                    text: "TRAFFIC ENGINEERING "
+                    size_hint: .5, .15
+                Label:
+                    text: "CONSTRUCTION / MAINTENANCE / UTILITY / PERMIT "
+                    size_hint: .5, .15
+
+                Label:
+                    text: "--------------------------------------------------------- VERIFICATION ---------------------------------------------------------"
+                    size_hint: 0, .13
+
+                GridLayout:
+                    cols: 2
+                    size_hint: 0, .17
+
+                    Label:
+                        text: "Lic. No.: "
+                    TextInput:
+                        id: lic_num
+
+                GridLayout:
+                    cols: 2
+                    size_hint: 0, .17
+
+                    Label:
+                        text: "Last Name: "
+                    TextInput:
+                        id: last_name
+
+                GridLayout:
+                    cols: 2
+                    size_hint: 0, .17
+
+                    Label:
+                        text: "First Name: "
+                    TextInput:
+                        id: first_name
+
+                Label:
+                    text: "--------------------------------------------------------- ----------------------- ---------------------------------------------------------"
+                    size_hint: 0, .13
+
+            GridLayout:
+                rows: 7
+                spacing: 2
+                size_hint_y: None
+                height: 225
+
+                GridLayout:
+                    cols: 2
+
+                    Label:
+                        text: "RESIDENCY:"
+                        size_hint: .1, .4
+                    TextInput:
+                        id: residency
+                        size_hint: .2, .6
+                        multiline: False
+
+                GridLayout:
+                    cols: 2
+
+                    Label:
+                        text: "CONTRACTOR / AREA HEADQUARTERS:"
+                        size_hint: .1, .4
+                    TextInput:
+                        id: contractor_or_areaHeadQuarters
+                        size_hint: .2, .4
+                        multiline: False
+
+                GridLayout:
+                    cols: 2
+
+                    Label:
+                        text: "CITY / COUNTY:"
+                        size_hint: .1, .4
+                    TextInput:
+                        id: city_or_county
+                        size_hint: .2, .4
+                        multiline: False
+
+                GridLayout:
+                    cols: 2
+
+                    Label:
+                        text: "PROJ. NO. / PERMIT NO. / LOCATION:"
+                        size_hint: .1, .4
+                    TextInput:
+                        id: projNum_permanentitNum_location
+                        size_hint: .2, .4
+                        multiline: False
+
+                GridLayout:
+                    cols: 6
+
+                    Label:
+                        text: "TYPE OF OPERATION: "
+                        size_hint: .1, .4
+                    TextInput:
+                        id: type_of_operation
+                        size_hint: .1, .0
+                        multiline: False
+                        spacing: 2
+
+                    Label:
+                        text: "DAY/DATE: "
+                        size_hint: .05, 0
+                    TextInput:
+                        id: day_and_date
+                        size_hint: .1, 0
+                        multiline: False
+                        spacing: 2
+
+                    Label:
+                        text: "TIME: "
+                        size_hint: .04, 0
+                    TextInput:
+                        id: time
+                        size_hint: .05, 0
+                        multiline: False
+                        spacing: 2
+
+                GridLayout:
+                    cols: 6
+
+                    Label:
+                        text: "PERSON IN CHARGE: "
+                        size_hint: .05, .3
+                    TextInput:
+                        id: person_in_charge
+                        size_hint: .1, .2
+                        multiline: False
+
+                    Label:
+                        text: "POSTED SPEED: "
+                        size_hint: .04, .3
+                    TextInput:
+                        id: posted_speed
+                        size_hint: .04, .2
+                        multiline: False
+
+                    Label:
+                        text: "MPH: "
+                        size_hint: .02, .1
+                    TextInput:
+                        id: mph
+                        size_hint: .02, .2
+                        multiline: False
+
+                GridLayout:
+                    cols: 10
+
+                    Label:
+                        text: "WEATHER CONDITION:"
+                        size_hint: 1, .2
+                    TextInput:
+                        id: weather_condition
+                        size_hint: .8, .2
+                        multiline: False
+
+                    CheckBox:
+                        id: day
+                        size_hint: .3, 0
+                    Label:
+                        size_hint: .1, 0
+                        text: "DAY"
+
+                    CheckBox:
+                        id: night_work
+                        size_hint: .3, 0
+                    Label:
+                        size_hint: .5, 0
+                        text: "NIGHT WORK "
+
+                    CheckBox:
+                        id: in_progress
+                        size_hint: .3, 0
+                    Label:
+                        size_hint: .1, 0
+                        text: "IN"
+
+                    CheckBox:
+                        id: not_in_progress
+                        size_hint: .3, 0
+                    Label:
+                        text: "NOT IN PROGRESS "
+
+            GridLayout:
+                rows: 3
+                size_hint_y: None
+                height: 400
+
+                Label:
+                    text: "A.    DRIVE THRU: "
+
+                BoxLayout:
+                    orientation: "horizontal"
+
+                    GridLayout:
+                        rows: 4
+
+                        Label:
+                            text: "ARE MANEUVERS DIFFICULT OR UNEXPECTED?"
+
+                        Label:
+                            text: "ADEQUATE WARNING OF HAZARDS?"
+
+                        Label:
+                            text: "SIGNING CLEAR / UNCLUTTERED AND PROPERLY SPACED?"
+
+                        Label:
+                            text: "ARE TRAFFIC CONTROL DEVICES SUFFICIENTLY VISIBLE?"
+
+                    GridLayout:
+                        rows: 4
+
+                        CheckBox:
+                            id: maneuvers_difficultOrUnexpected
+
+                        CheckBox:
+                            id: adequate_warningOfHazards
+
+                        CheckBox:
+                            id: signing_isClearAndSpaced
+
+                        CheckBox:
+                            id: trafficControlDevices_wellVisible
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: a_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 500
+
+                Label:
+                    text: "B.    SIGNS: "
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 10
+
+                    GridLayout:
+                        rows: 7
+
+                        Label:
+                            text: "ADEQUATE "
+
+                        Label:
+                            text: "INADEQUATE "
+
+                        Label:
+                            text: "NEED TO BE (REMOVED / REPOSITIONED / COVERED) "
+
+                        Label:
+                            text: "NEED (CLEANING / REPLACEMENT)"
+
+                        Label:
+                            text: "CONFLICTING (PERMANENT / TEMPORARY SIGNING)"
+
+                        Label:
+                            text: "NON-APPROVED SIGN SUPPORT"
+
+                        Label:
+                            text: "BLOCKED BY VEGETATION"
+
+                    GridLayout:
+                        rows: 7
+
+                        CheckBox:
+                            id: b_adequate
+
+                        CheckBox:
+                            id: b_inadequate
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: needToBe_removed
+                                size_hint: .4, 1
+                            Label:
+                                text: "REMOVED"
+
+                            CheckBox:
+                                id: needToBe_repositioned
+                            Label:
+                                text: "REPOSITIONED"
+
+                            CheckBox:
+                                id: needToBe_covered
+                            Label:
+                                text: "COVERED"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: need_cleaning
+                            Label:
+                                text: "CLEANING"
+
+                            CheckBox:
+                                id: need_replacement
+                            Label:
+                                text: "REPLACEMENT"
+                            Label:
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: conflicting_permanentSigning
+                            Label:
+                                text: "PERMANENT"
+
+                            CheckBox:
+                                id: conflicting_temporarySigning
+                            Label:
+                                text: "TEMPORARY SIGNING"
+                                size_hint: 1.5, 1
+                            Label:
+
+                        CheckBox:
+                            id: nonapproved_signSupport
+
+                        CheckBox:
+                            id: blocked_by_vegetation
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: b_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 400
+
+                Label:
+                    text: "C.  PORTABLE CHANGEABLE MESSAGE SIGN:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 6
+
+                        Label:
+                            text: "ADEQUATE "
+                        Label:
+                            text: "INADEQUATE "
+                        Label:
+                            text: "APPLICATION DOES NOT MEET GUIDELINES  "
+                        Label:
+                            text: "INAPPROPRIATE (MESSAGE)"
+                        Label:
+                            text: "TO MUCH INFORMATION ON P.C.M.S"
+                        Label:
+                            text: "NOT DELINEATED, NO CONES / BARRELS"
+
+                    GridLayout:
+                        rows: 7
+
+                        CheckBox:
+                            id: c_adequate
+
+                        CheckBox:
+                            id: c_inadequate
+
+                        CheckBox:
+                            id: appDoesntMeet_guidelines
+
+                        CheckBox:
+                            id: inappropriate_message
+
+                        CheckBox:
+                            id: tooMuchInfo_on_PCMS
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: notDelineated_noCones
+                            Label:
+                                text: "NO CONES"
+
+                            CheckBox:
+                                id: notDelineated_noBarrels
+                            Label:
+                                text: "BARRELS"
+                            Label:
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: c_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 400
+
+                Label:
+                    text: "D.  ARROW BOARD:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 6
+
+                        Label:
+                            text: "ADEQUATE "
+                        Label:
+                            text: "INADEQUATE "
+                        Label:
+                            text: "MALFUNCTION (BULB OUT, ETC.) "
+                        Label:
+                            text: "INCORRECT PLACEMENT"
+                        Label:
+                            text: "MISALIGNED BULBS "
+                        Label:
+                            text: "NOT DIMMED AT NIGHT"
+
+                    GridLayout:
+                        rows: 6
+
+                        CheckBox:
+                            id: d_adequate
+
+                        CheckBox:
+                            id: d_inadequate
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: malfunc_malfunction
+                            Label:
+                                text: "MALFUNCTION"
+
+                            CheckBox:
+                                id: malfunc_bulb
+                            Label:
+                                text: "BULB"
+                            Label:
+
+                        CheckBox:
+                            id: incorrect_placement
+
+                        CheckBox:
+                            id: misaligned_bulbs
+
+                        CheckBox:
+                            id: notDimmed_atNight
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: d_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 4
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 500
+
+                Label:
+                    text: "E.  DRUMS = D,    CONES = C,    OTHER = O: "
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 9
+
+                        Label:
+                            text: "DRUMS, (AND) CONES, OTHER"
+                        Label:
+                            text: "ADEQUATE "
+                        Label:
+                            text: "INADEQUATE "
+                        Label:
+                            text: "INAPPROPRIATE TAPER LENGTH"
+                        Label:
+                            text: "SPACING INADEQUATE (TOO LONG / TOO SHORT)"
+                        Label:
+                            text: "CONDITION OF THE DEVICES (REPAIR / CLEAN / REPLACE)"
+                        Label:
+                            text: "REFLECTIVE SLEEVES OR BANDS MISSING ON"
+                        Label:
+                            text: "ADDITIONAL DEVICES NEEDED "
+                        Label:
+                            text: "MISALIGNED"
+
+                    GridLayout:
+                        rows: 9
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: drums_used
+                            Label:
+                                text: "DRUMS"
+
+                            CheckBox:
+                                id: cones_used
+                            Label:
+                                text: "CONES"
+
+                            CheckBox:
+                                id: other_used
+                            Label:
+                                text: "OTHER"
+
+                        CheckBox:
+                            id: e_adequate
+
+                        CheckBox:
+                            id: e_inadequate
+
+                        CheckBox:
+                            id: inapprop_taper_length
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: spacing_tooLong
+                            Label:
+                                text: "TOO LONG"
+
+                            CheckBox:
+                                id: spacing_tooShort
+                            Label:
+                                text: "TO SHORT"
+                            Label:
+                                text: "     "
+                            Label:
+                                text: "     "
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: conditionOfDevices_repair
+                            Label:
+                                text: "REPAIR"
+
+                            CheckBox:
+                                id: conditionOfDevices_clean
+                            Label:
+                                text: "CLEAN"
+
+                            CheckBox:
+                                id: conditionOfDevices_replace
+                            Label:
+                                text: "REPLACE"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: missingReflectSleevesOrBands_cones
+                            Label:
+                                text: "CONES   "
+
+                            CheckBox:
+                                id: missingReflectSleevesOrBands_tubularMarkers
+                            Label:
+                                text: "TUBULAR MARKERS"
+                            Label:
+                                text: " "
+
+                        CheckBox:
+                            id: additonalDevicesNeeded
+
+                        CheckBox:
+                            id: misaligned
+
+                GridLayout:
+                    rows: 1
+                    size_hint: 1, .5
+
+                    TextInput:
+                        id: e_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 500
+
+                Label:
+                    text: "F.  TRAFFIC BARRIER: "
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 8
+
+                        Label:
+                            text: "ADEQUATE"
+                        Label:
+                            text: "INADEQUATE"
+                        Label:
+                            text: "IMPROPER BARRIER WALL FLARE"
+                        Label:
+                            text: "BARRIER NEEDS TO BE (REALIGNED / REMOVED)"
+                        Label:
+                            text: "WARNING LIGHT (SERVICE / CLEAN)"
+                        Label:
+                            text: "DELINEATORS (CLEAN / ADDITIONAL)"
+                        Label:
+                            text: "8\" X 12\" BARRIER PANELS (CLEAN / ADDITIONAL)"
+                        Label:
+                            text: "ATTENUATOR (REPAIR / REPLACE)"
+
+                    GridLayout:
+                        rows: 8
+
+                        CheckBox:
+                            id: f_adequate
+
+                        CheckBox:
+                            id: f_inadequate
+
+                        CheckBox:
+                            id: improperBarrier_wallFlare
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: barrierNeedsToBe_realigned
+                            Label:
+                                text: "REALIGNED"
+
+                            CheckBox:
+                                id: barrierNeedsToBe_removed
+                            Label:
+                                text: "REMOVED"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: warningLight_service
+                            Label:
+                                text: "SERVICE"
+
+                            CheckBox:
+                                id: warningLight_clean
+                            Label:
+                                text: "CLEAN"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: delineators_clean
+                            Label:
+                                text: "CLEAN"
+
+                            CheckBox:
+                                id: delineators_additional
+                            Label:
+                                text: "ADDITIONAL"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: barrierPanels_clean
+                            Label:
+                                text: "CLEAN"
+
+                            CheckBox:
+                                id: barrierPanels_additional
+                            Label:
+                                text: "ADDITIONAL"
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: attenuator_repair
+                            Label:
+                                text: "REPAIR"
+
+                            CheckBox:
+                                id: attenuator_replace
+                            Label:
+                                text: "REPLACE"
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: f_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 550
+
+                Label:
+                    text: "G.  FLAGGING OPERATION:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 10
+
+                        Label:
+                            text: "ADEQUATE"
+                        Label:
+                            text: "INADEQUATE"
+                        Label:
+                            text: "  "
+                        Label:
+                            text: "NEED ADDITIONAL ADVANCE SIGNING,"
+                        Label:
+                            text: "ARE FLAGPERSONS :                                 "
+                        Label:
+                            text: "CERTIFIED?"
+                        Label:
+                            text: "POSITIONED CORRECTLY?"
+                        Label:
+                            text: "HIGHLY VISIBLE?"
+                        Label:
+                            text: "PROPERLY CLOTHED?"
+                        Label:
+                            text: "FLAGGING CORRECTLY?"
+
+                    GridLayout:
+                        rows: 10
+
+                        CheckBox:
+                            id: g_adequate
+
+                        CheckBox:
+                            id: g_inadequate
+
+                        Label:
+                            text: "  "
+
+                        Label:
+                            text: "  "
+
+                        Label:
+                            text: "  "
+
+                        CheckBox:
+                            id: certified
+
+                        CheckBox:
+                            id: positionedCorrectly
+
+                        CheckBox:
+                            id: highlyVisible
+
+                        CheckBox:
+                            id: properlyClothed
+
+                        CheckBox:
+                            id: flaggingCorrectly
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: g_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 4
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 550
+
+                Label:
+                    text: "H.  PAVEMENT MARKING:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+
+                    GridLayout:
+                        rows: 8
+
+                        Label:
+                            text: "PERMANENT"
+                        Label:
+                            text: "CONSTRUCTION"
+                        Label:
+                            text: "ADEQUATE"
+                        Label:
+                            text: "INADEQUATE"
+                        Label:
+                            text: "REMOVE"
+                        Label:
+                            text: "REPAIR"
+                        Label:
+                            text: "NEED ADDITIONAL"
+                        Label:
+                            text: "UNNECESSARY (MARKINGS / NOT ERADICATED COMPLETED)"
+
+                    GridLayout:
+                        rows: 8
+
+                        CheckBox:
+                            id: h_permanent
+
+                        CheckBox:
+                            id: h_construction
+
+                        CheckBox:
+                            id: h_adequate
+
+                        CheckBox:
+                            id: h_inadequate
+
+                        CheckBox:
+                            id: h_remove
+
+                        CheckBox:
+                            id: repair
+
+                        CheckBox:
+                            id: h_needAdditional
+
+                        BoxLayout:
+                            orientation: "horizontal"
+
+                            CheckBox:
+                                id: unnecessary_markings
+                                size_hint_x: .1
+                            Label:
+                                text: "MARKINGS"
+                                size_hint_x: 2
+
+                            CheckBox:
+                                id: unnecessary_notEradicatedCompletely
+                                size_hint_x: 1
+                            Label:
+                                text: "NOT ERADICATED COMPLETELY"
+                                size_hint_x: 3
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: h_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 500
+
+                Label:
+                    text: "I.  PAVEMENT MARKERS:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 7
+
+                        Label:
+                            text: "PERMANENT"
+                        Label:
+                            text: "CONSTRUCTION"
+                        Label:
+                            text: "ADEQUATE"
+                        Label:
+                            text: "INADEQUATE"
+                        Label:
+                            text: "REPLACE MISSING"
+                        Label:
+                            text: "REMOVE"
+                        Label:
+                            text: "NEED ADDITIONAL"
+
+                    GridLayout:
+                        rows: 7
+
+                        CheckBox:
+                            id: i_permanent
+
+                        CheckBox:
+                            id: i_construction
+
+                        CheckBox:
+                            id: i_adequate
+
+                        CheckBox:
+                            id: i_inadequate
+
+                        CheckBox:
+                            id: replace_missing
+
+                        CheckBox:
+                            id: i_remove
+
+                        CheckBox:
+                            id: i_needAdditional
+
+                GridLayout:
+                    rows: 1
+                    TextInput:
+                        id: i_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 200
+
+                Label:
+                    text: "J.  TRUCK-MOUNTED ATTENUATOR:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 3
+
+                        Label:
+                            text: "PROPERLY POSITIONED?"
+                        Label:
+                            text: "PROPERLY MAINTAINED?"
+                        Label:
+                            text: "PROPERLY DELINEATED?"
+
+                    GridLayout:
+                        rows: 3
+
+                        CheckBox:
+                            id: properly_positioned
+
+                        CheckBox:
+                            id: properly_maintained
+
+                        CheckBox:
+                            id: properly_delineated
+
+                GridLayout:
+                    rows: 1
+
+                    TextInput:
+                        id: j_comments
+                        text: "COMMENTS HERE..."
+                        size_hint: 5, 15
+
+            GridLayout:
+                rows: 2
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 200
+
+                Label:
+                    text: "K.  MISCELLANEOUS:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 4
+
+                        Label:
+                            text: "ADEQUATE BUFFER SPACE?"
+                        Label:
+                            text: "IS THE WORK AREA PROTECTED?"
+                        Label:
+                            text: "MATERIALS PROPERLY STORED?"
+                        Label:
+                            text: "ARE LANE CLOSURES IN ACCORD WITH ALLOWED HOURS"
+
+                    GridLayout:
+                        rows: 4
+
+                        CheckBox:
+                            id: adequate_bufferSpace
+
+                        CheckBox:
+                            id: workArea_protected
+
+                        CheckBox:
+                            id: materials_properlyStored
+
+                        CheckBox:
+                            id: laneClosures_accordWithAllowedHours
+
+            GridLayout:
+                rows: 3
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 200
+
+                Label:
+                    text: "ACCIDENTS:"
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    GridLayout:
+                        rows: 4
+
+                        Label:
+                            text: "EVIDENCE OF AN ACCIDENT"
+                        Label:
+                            text: "DAMAGED TRAFFIC CONTROL DEVICES"
+                        Label:
+                            text: "SKID MARKS"
+                        Label:
+                            text: "DEBRIS"
+
+                    GridLayout:
+                        rows: 4
+
+                        CheckBox:
+                            id: evidence_ofAccident
+
+                        CheckBox:
+                            id: damaged_trafficControlDevices
+
+                        CheckBox:
+                            id: skid_marks
+
+                        CheckBox:
+                            id: debris
+
+            GridLayout:
+                rows: 6
+                spacing: 2
+                padding: 2
+                size_hint_y: None
+                height: 550
+
+                Label:
+                    text: "END OF FORM - COMMENTS / RECOMMENDATION: "
+                TextInput:
+                    id: comments_recommendations
+                    text: "Enter addtional comments and concerns here..."
+                    size_hint: 1, 3
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 1
+                    padding: 1
+
+                    Label:
+                        text: "REVIEWED BY: "
+                        size_hint: .8, .4
+                    TextInput:
+                        id: reviewed_by
+                        text: "by the person conducting the review"
+                        size_hint: 3, .4
+                        multiline: False
+
+                    Label:
+                        size_hint: 1, .4
+                        text: "DATE: "
+                    TextInput:
+                        text: "MM/DD/YYYY"
+                        id: reviewed_byDate
+                        size_hint: 1, .4
+                        multiline: False
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 1
+                    padding: 1
+
+                    Label:
+                        text: "REVIEWED WITH: "
+                        size_hint: .9, .4
+                    TextInput
+                        id: reviewed_withDate
+                        text: "by the person supervising the work zone"
+                        size_hint: 3, .4
+                        multiline: False
+
+                    Label:
+                        size_hint: 1, .4
+                        text: "DATE: "
+                    TextInput:
+                        id: reviewed_with
+                        text: "MM/DD/YYYY"
+                        size_hint: 1, .4
+                        multiline: False
+
+                BoxLayout:
+                    orientation: "horizontal"
+                    spacing: 1
+                    padding: 1
+
+                    Label:
+                        text: "COPY: CONTRACTOR, INSPECTOR, RESIDENT ENGINEER, OR OTHER "
+                        size_hint: 1, .4
+                    TextInput:
+                        id: giveCopy_to
+                        size_hint: .7, .4
+                        multiline: False
+
+                BoxLayout:
+                    orientation: "vertical"
+                    spacing: 0
+                    padding: 0
+
+                    Button:
+                        text: "Save"
+                        on_release:
+                            root.pressed_save()
