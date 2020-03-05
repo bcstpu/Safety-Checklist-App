@@ -4,7 +4,6 @@ import os
 
 from notificationPopup import show_error_popup, show_success_popup
 from pdfWriter import write_pdf_from_template
-from shutil import copy
 
 
 class FileBrowser(Screen):
