@@ -31,12 +31,13 @@ def __verify_pdf_acro_writer(pdf):
 		pdf._root_object["/AcroForm"].update({NameObject("/NeedAppearances"): BooleanObject(True)})
 
 
-def write_pdf_from_template(pdf_template_path: str, pdf_write_path: str, variable_dictionary: dict) -> bool:
-	# dump to command line the entire var dict.
-	print("WRITING THESE FIELDS:")
-	for key in variable_dictionary.keys():
-		print("Field Name: " + key + " Value: " + variable_dictionary[key])
-
+def write_pdf_from_template(pdf_template_path: str, pdf_write_path: str, variable_dictionary: dict):
+	"""
+	Writes a pdf with the fields supplied, as to match the template whose path is supplied.  Reads and writes all in one.
+	:param pdf_template_path: template path (in our case, safety_checklist.pdf)
+	:param pdf_write_path: output file path (user selected)
+	:param variable_dictionary: form data which is used in a key-value set to the open PDF fields
+	"""
 	pdf_template = PdfFileReader(open(pdf_template_path, "rb"), strict=False)
 	__verify_pdf_acro_reader(pdf_template)
 
@@ -44,32 +45,11 @@ def write_pdf_from_template(pdf_template_path: str, pdf_write_path: str, variabl
 	set_need_appearances_writer(pdf_writer)
 	__verify_pdf_acro_writer(pdf_writer)
 
-	# page add --I guess it's a page at a time?  No idea why steven's original has this, but w/e
 	for page_num in range(pdf_template.numPages):
 		pdf_writer.addPage(pdf_template.getPage(page_num))
-		pdf_writer.updatePageFormFieldValues(pdf_writer.getPage(page_num), variable_dictionary)
 
-	# wanna see me do it again?  I don't think it's writing right until finished compilation but I don't know...
 	for page_num in range(pdf_template.numPages):
 		pdf_writer.updatePageFormFieldValues(pdf_writer.getPage(page_num), variable_dictionary)
 
-	# save
 	with open(pdf_write_path, 'wb') as f:
 		pdf_writer.write(f)
-	return True
-
-
-def createPDF(pdf_path, variableDictionary):
-	pdf_writer = PdfFileWriter()
-	set_need_appearances_writer(pdf_writer)
-	pdf_reader = PdfFileReader(pdf_path)
-	page_1 = pdf_reader.getPage(0)
-	pdf_writer.addPage(page_1)
-	pdf_writer.updatePageFormFieldValues(page_1, variableDictionary)
-	with open('completed_checklist.pdf', 'wb') as fh:
-		pdf_writer.write(fh)
-
-"""
-if __name__ == '__main__':
-	path = 'safety_checklist.pdf'
-"""
