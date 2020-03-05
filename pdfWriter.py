@@ -3,7 +3,7 @@ from PyPDF2.generic import BooleanObject, NameObject, IndirectObject
 from notificationPopup import show_error_popup
 
 
-def set_need_appearances_writer(writer):
+def __set_need_appearances_writer(writer):
 	"""Fixes glitches in backend of pdf writer, see: https://github.com/mstamy2/PyPDF2/issues/355#issuecomment-360575792"""
 	try:
 		catalog = writer._root_object
@@ -17,7 +17,7 @@ def set_need_appearances_writer(writer):
 		return writer
 
 	except Exception as e:
-		show_error_popup("Error: set_need_appearances_writer() catch : " + repr(e))     # pipe it to the main out.
+		show_error_popup("Error: __set_need_appearances_writer() catch : " + repr(e))     # pipe it to the main out.
 		return writer
 
 
@@ -42,7 +42,7 @@ def write_pdf_from_template(pdf_template_path: str, pdf_write_path: str, variabl
 	__verify_pdf_acro_reader(pdf_template)
 
 	pdf_writer = PdfFileWriter()
-	set_need_appearances_writer(pdf_writer)
+	__set_need_appearances_writer(pdf_writer)
 	__verify_pdf_acro_writer(pdf_writer)
 
 	for page_num in range(pdf_template.numPages):
