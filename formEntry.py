@@ -3,6 +3,7 @@ from kivy.lang import Builder
 
 from licensing import is_valid_license
 from notificationPopup import show_error_popup
+from fileBrowser import FileBrowser
 
 
 class FormEntry(Screen):
@@ -87,7 +88,10 @@ class FormEntry(Screen):
 				return
 
 		# transfer to file browser to save
-		show_error_popup("Passing to file browse,r but it's uh, yeah, not done yet.")
+		FileBrowser.set_write_data(form)
+		FileBrowser._save_mode = True
+
+		self.manager.current = "FileBrowser"
 
 	def build_key_value_pairs(self):
 		"""
@@ -106,5 +110,4 @@ class FormEntry(Screen):
 		return values
 
 
-# Builder.load_file("wzsafetychecklist.kv")
-Builder.load_file("formEntry.kv")   # TODO: get the valid one from Reynaldo.
+Builder.load_file("formEntry.kv")

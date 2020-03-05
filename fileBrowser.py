@@ -3,6 +3,8 @@ from kivy.lang import Builder
 import os
 
 from notificationPopup import show_error_popup, show_success_popup
+from pdfWriter import write_pdf_from_template
+from shutil import copy
 
 
 class FileBrowser(Screen):
@@ -11,38 +13,45 @@ class FileBrowser(Screen):
 	# TODO: there's a lot of instance/static that should be swapped around, but Kivy likes to throw a fit when it's expecting one or the other.
 	"""
 
-	__OPERATION_BUTTON_SAVE_TEXT = "Save"
-	__OPERATION_BUTTON_LOAD_TEXT = "Load"
-	__SAVE_SUCCESS_TEXT = "We haven't saved but we would've if this was coded in!"
+	__SAVE_SUCCESS_TEXT = "File saved."
 	__SAVE_FAILURE_TEXT = "Failed to save."
 	__SAVE_NO_NAME_TEXT = "No name supplied for file."
 	__SAVE_INVALID_DIR_TEXT = "Please select a valid directory to save in."
 	__LOAD_INVALID_DIR_TEXT = "Please select a valid file to load."
 	__LOAD_FAIL_TEXT = "Could not load the file: "
+	__TEMPLATE_PATH = "safety_checklist.pdf"
+
+	__DEBUG_NAME = "debug output"
 
 	_save_mode = False
 	_file_path = ""
 	_file_name = ""
-	_operation_button_label_text = "OK"  # TODO: dynamically set this off save/load mode
+	_operation_button_label_text = "OK"
+	_write_fields = {}
 
 	def __init__(self, **kwargs):
 		super().__init__(**kwargs)
 
 	@staticmethod
-	def set_file_name(name: str):
-		if type(name) is str:
-			FileBrowser._file_name = name
-		else:
-			FileBrowser._file_name = str(name)
+	def set_write_data(fields: dict):
+		"""
+		Sets the write data of fields and, by extension of these fields, the file name
+		:param fields: the fields object from formentry sent in to be held in the fileBrowser data buffer
+		:return: none
+		"""
+		# paths don't like slashes.
+		date_field = fields["day_and_date"]
+		date_str_a = date_field.replace("/", "-")
+		date_str_b = date_str_a.replace("\\", "-")
 
-	@staticmethod
-	def _operation_button_text() -> str:
-		if FileBrowser._save_mode:
-			return FileBrowser.__OPERATION_BUTTON_SAVE_TEXT
-		return FileBrowser.__OPERATION_BUTTON_LOAD_TEXT
+		FileBrowser._file_name = "" + fields["first_name"] + "-" + fields["last_name"] + "-" + date_str_b + ".pdf"
+		if FileBrowser._file_name == "--.pdf":
+			FileBrowser._file_name = FileBrowser.__DEBUG_NAME + ".pdf"
+
+		FileBrowser._write_fields = fields
 
 	# unfortunately, these have to be instance-based methods, thanks to kivy widget binding
-	# TODO: figure out how to make these static?
+	# TODO: rewrite some of the binding code to properly reference static, then refactor
 	def _set_file_path(self, s: str):
 		FileBrowser._file_path = str(s)  # for some reason it sometimes sends it as a list?
 
@@ -90,23 +99,26 @@ class FileBrowser(Screen):
 			show_error_popup(FileBrowser.__SAVE_NO_NAME_TEXT)
 			return False
 
-		# TODO: actually save
-		saved = True
-		if saved:
-			show_success_popup("We haven't implemented saving " + FileBrowser._file_path + "!")
-			return True
-		else:
-			show_error_popup(FileBrowser.__SAVE_FAILURE_TEXT)
+		# first copies over the template; Steven's implementation really fucked us over here
+		file_total_path = os.path.join(FileBrowser._file_path, FileBrowser._file_name)
+		"""
+		try:
+			copy(FileBrowser.__TEMPLATE_PATH, file_total_path)
+		except Exception as e:
+			show_error_popup("Couldn't create a PDF template to write on.\nTarget path: " + file_total_path + "\nError: " + repr(e))
 			return False
+		"""
+		# then writes to it
+		write_pdf_from_template(FileBrowser.__TEMPLATE_PATH, file_total_path, FileBrowser._write_fields)
+		show_success_popup("Saved to " + file_total_path + ".")
+		FileBrowser.__cleanup()
+		return True
 
 	@staticmethod
-	def cleanup():
+	def __cleanup():
 		FileBrowser._file_path = ""
 		FileBrowser._file_name = ""
 		FileBrowser._save_mode = False
-
-
-
 
 
 Builder.load_file("fileBrowser.kv")
