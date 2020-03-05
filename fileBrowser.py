@@ -99,18 +99,10 @@ class FileBrowser(Screen):
 			show_error_popup(FileBrowser.__SAVE_NO_NAME_TEXT)
 			return False
 
-		# first copies over the template; Steven's implementation really fucked us over here
-		file_total_path = os.path.join(FileBrowser._file_path, FileBrowser._file_name)
-		"""
-		try:
-			copy(FileBrowser.__TEMPLATE_PATH, file_total_path)
-		except Exception as e:
-			show_error_popup("Couldn't create a PDF template to write on.\nTarget path: " + file_total_path + "\nError: " + repr(e))
-			return False
-		"""
-		# then writes to it
-		write_pdf_from_template(FileBrowser.__TEMPLATE_PATH, file_total_path, FileBrowser._write_fields)
-		show_success_popup("Saved to " + file_total_path + ".")
+		file_write_path = os.path.join(FileBrowser._file_path, FileBrowser._file_name)
+
+		write_pdf_from_template(FileBrowser.__TEMPLATE_PATH, file_write_path, FileBrowser._write_fields)
+		show_success_popup("Saved to " + file_write_path + ".")
 		FileBrowser.__cleanup()
 		return True
 
