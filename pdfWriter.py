@@ -1,5 +1,6 @@
 from PyPDF2 import PdfFileWriter, PdfFileReader
 from PyPDF2.generic import BooleanObject, NameObject, IndirectObject
+
 from notificationPopup import show_error_popup
 
 

@@ -64,7 +64,7 @@ class FormEntry(Screen):
 		If engineer is licensed, transitions to file browser to save
 		"""
 
-		form = self.build_key_value_pairs()
+		form = self.__build_key_value_pairs()
 
 		# check for missing fields
 		missing_fields = FormEntry.__missing_fields(form)
@@ -93,10 +93,10 @@ class FormEntry(Screen):
 
 		self.manager.current = "FileBrowser"
 
-	def build_key_value_pairs(self):
+	def __build_key_value_pairs(self):
 		"""
 		Some seriously weird stuff.  Introspects the self.ids, determines by what fields they have if it's text or checkbox.
-		From there it adds to a dict of values.  Kivy text objects have text as their field name, kivy checkboxes have active.
+		From there it adds to a dict of values.  Kivy text objects have text as their field name, Kivy checkboxes have active.
 		:return: key-value dictionary
 		"""
 		values = {}
@@ -108,6 +108,17 @@ class FormEntry(Screen):
 			else:
 				print("Error on " + id_field)
 		return values
+
+	@staticmethod
+	def __add_format_adjusted_field_copies(form: dict):
+		"""
+		Modifies an existing form to add specialized multiline fields and such.
+		This is necessary because of a failure of the pdf format to comply with the preset field standards.
+		It does directly access and mutate the dict, which is a no-good, but it's 5am the day before it's all due.
+		:param form:
+		"""
+		# TODO: either do this, or snip it.
+		return
 
 
 Builder.load_file("formEntry.kv")

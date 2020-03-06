@@ -79,7 +79,17 @@ class FileBrowser(Screen):
 		show_error_popup(FileBrowser.__SAVE_INVALID_DIR_TEXT if FileBrowser._save_mode else FileBrowser.__LOAD_INVALID_DIR_TEXT)
 
 	@staticmethod
+	def __is_pdf(s: str) -> bool:
+		splitted = s.split(".")
+		term = splitted[len(splitted)-1].lower()
+		return term == "pdf"
+
+	@staticmethod
 	def _load() -> bool:
+		if not FileBrowser.__is_pdf(FileBrowser._file_path):
+			show_error_popup(FileBrowser._file_path + " is not a pdf.")
+			return False
+
 		if FileBrowser._file_path is not None:
 			try:
 				os.startfile(FileBrowser._file_path)
